@@ -2,7 +2,7 @@ const request = require("request");
 
 export default function getData() {
   var promise = new Promise((resolve, reject) => {
-    request("https://www.bestbuy.ca/en-ca/product/nintendo-switch-console-with-grey-joy-con/13817626", function (error, response, html) {
+    request("https://www.bestbuy.ca/en-ca/product/starlink-battle-for-atlas-switch/12612458", function (error, response, html) {
       if (error) {
         reject(error);
       }
