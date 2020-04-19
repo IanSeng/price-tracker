@@ -1,6 +1,8 @@
 import getData from "./priceData/index";
 const cheerio = require("cheerio");
 var nodemailer = require("nodemailer");
+require('dotenv').config()
+
 
 function checkPrice() {
   getData()
@@ -31,7 +33,7 @@ function sendEmail(price) {
     service: "gmail",
     auth: {
       user: "ian.dev27@gmail.com",
-      pass: "",
+      pass: process.env.EMAIL_PASSWORD,
     },
   });
   var mailOptions = {
@@ -49,6 +51,9 @@ function sendEmail(price) {
   });
 }
 
-setInterval(function () {
-  checkPrice();
-}, 1 * 60 * 60 * 1000);
+checkPrice();
+// setInterval(function () {
+//   checkPrice();
+// }, 1 * 60 * 60 * 1000);
+//console.log(process.env);
+
