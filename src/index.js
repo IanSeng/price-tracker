@@ -51,9 +51,8 @@ function sendEmail(price) {
   });
 }
 
-checkPrice();
-// setInterval(function () {
-//   checkPrice();
-// }, 1 * 60 * 60 * 1000);
+setInterval(function () {
+  checkPrice();
+}, 1 * 60 * 1000);
 //console.log(process.env);
 
